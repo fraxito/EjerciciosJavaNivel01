@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class EjerciciosNivel01Java {
 
-    int [] listaNumeros = {15, 31, 200, 2, 5, 99};
+    int [] listaNumeros = {15, 31, 200, 20, 5, 99};
     
     public int maximo ( int[] lista){
         int auxiliar = lista[0];
@@ -28,6 +28,9 @@ public class EjerciciosNivel01Java {
                arrayMaximos[1] = arrayMaximos[0];
                arrayMaximos[0] = lista[i];
            } 
+           else if (arrayMaximos[1] < lista[i]){
+               arrayMaximos[1] = lista[i];
+           } 
         }
         return arrayMaximos;
     }
@@ -40,7 +43,11 @@ public class EjerciciosNivel01Java {
         EjerciciosNivel01Java ejercicio = new EjerciciosNivel01Java();
         System.out.println(ejercicio.maximo(ejercicio.listaNumeros));
         
-        System.out.println(Arrays.toString(ejercicio.maximos(ejercicio.listaNumeros)));
+        System.out.println(
+                Arrays.toString(
+                        ejercicio.maximos(ejercicio.listaNumeros)
+                )
+        );
     
     }
     
