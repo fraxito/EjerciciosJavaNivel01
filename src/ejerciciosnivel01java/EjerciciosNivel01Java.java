@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class EjerciciosNivel01Java {
 
-    int [] listaNumeros = {15, 31, 200, 20, 5, 99};
+    int [] listaNumeros = {333, 31, 200, 20, 5, 99};
     
     public int maximo ( int[] lista){
         int auxiliar = lista[0];
@@ -21,18 +21,19 @@ public class EjerciciosNivel01Java {
     }
  
     public int[] maximos ( int[] lista){
-        int [] arrayMaximos = {lista[0], lista[0]};
-        
+        int max1 = lista[0];
+        int max2 = lista[1];
         for (int i=0; i< lista.length; i++){
-           if (arrayMaximos[0] < lista[i]){
-               arrayMaximos[1] = arrayMaximos[0];
-               arrayMaximos[0] = lista[i];
-           } 
-           else if (arrayMaximos[1] < lista[i]){
-               arrayMaximos[1] = lista[i];
-           } 
+           if (max1 < lista[i]){
+               max2 = max1;
+               max1 = lista[i];
+           }
+           else if (max2 < lista[i] && lista[i] != max1){
+               max2 = lista[i];
+           }
         }
-        return arrayMaximos;
+        int [] maxArray = {max1, max2};
+        return maxArray;
     }
     
     
