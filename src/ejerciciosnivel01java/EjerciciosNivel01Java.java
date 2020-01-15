@@ -36,6 +36,42 @@ public class EjerciciosNivel01Java {
         return maxArray;
     }
     
+    private String quita(String cadena){
+        String auxiliar = "";
+        for (int i=0; i< cadena.length(); i++){
+            if (cadena.charAt(i) != ' '){
+                auxiliar = auxiliar + cadena.charAt(i);
+            }
+        }
+        return auxiliar;
+    }
+    private boolean palindromo(String cadena){
+        //primera fase: creo un nuevo String que sea una copia del 
+        //que me pasan pero quitándole los espacios en blanco
+        String auxiliar = quita(cadena);
+        //ahora en auxiliar tengo el string pero sin espacios en blanco
+        //declaro dos indices para que digan qué posiciones estoy comparando
+        int indiceIzq = 0;
+        int indiceDer = auxiliar.length()-1;
+        
+        //mientras sean iguales los caracteres en esas posiciones la palabra será un palindromo
+        //en el momento en el que una de esas comparaciones falle, es que no es palíndromo
+        
+        //además, si el indice izquierdo es mayor que el derecho, ya he chequeado toda la frase
+        while (auxiliar.charAt(indiceIzq) == auxiliar.charAt(indiceDer) && indiceIzq <= indiceDer){
+            indiceIzq++;
+            indiceDer--;
+        }
+        boolean resultado = true;
+        if (indiceIzq < indiceDer){ // si esto se cumple es que la palabra no es un palíndromo
+            resultado = false;
+            System.out.println("NO ES UN PALINDROMO ");
+        }
+        else{
+            System.out.println("SI ES UN PALINDROMO ");
+        }
+    return resultado; 
+    }
     
     /**
      * @param args the command line arguments
